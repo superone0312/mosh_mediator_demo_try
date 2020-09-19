@@ -1,18 +1,14 @@
 public class TextForm extends UIController {
-    private String content;
-    private ListBox list;
-    private SaveButton button;
+    private UIController list;
+    private UIController button;
 
-    public String getContent() {
-        return content;
+    @Override
+    public void setContent(String content) {
+        this.content = list.getContent();
+        button.setStatus(true);
     }
 
-    public void setContent() {
-        this.content = list.getSelectedPost();
-        button.setEnabled(true);
-    }
-
-    public TextForm(ListBox list, SaveButton button) {
+    public TextForm(UIController list, UIController button) {
         this.list = list;
         this.button = button;
     }

@@ -4,14 +4,14 @@ public class Main {
         var button = new SaveButton();
         var form = new TextForm(list, button);
 
-        list.setSelectedPost("This post is selected");
-        System.out.println(list.getSelectedPost());
+        list.setContent("This post is selected");
+        System.out.println(list.getContent());
 
-        form.setContent();
+        form.setContent("placeholder");
         String content = form.getContent();
         System.out.println("Content in editting: " + content);
-        
-        if (button.isEnabled()) {
+
+        if (button.getStatus()) {
             System.out.println("Button is enabled");
         }
 
